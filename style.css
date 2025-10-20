@@ -1,11 +1,25 @@
-/* --- Paleta de Colores y Variables (Basadas en el Logo) --- */
+/* --- Paleta de Colores y Variables --- */
 :root {
-    --color-primario: #00AEEF; /* Cyan/Azul claro del logo */
-    --color-secundario: #0D2235; /* Azul oscuro/Negro del logo */
+    /* Modo Claro (Default) */
+    --color-primario: #00AEEF;
+    --color-secundario: #0D2235;
     --color-texto: #333333;
-    --color-texto-secundario: #808080; /* Gris del logo */
+    --color-texto-secundario: #808080;
     --color-fondo: #f4f7f6;
+    --color-fondo-secundario: #ffffff; 
+    --color-borde: #e0e0e0;
+    --color-sombra: rgba(0,0,0,0.05);
     --color-blanco: #ffffff;
+
+    /* Modo Oscuro (se activará con .dark-mode) */
+    --dm-primario: #00AEEF; 
+    --dm-secundario: #EBF8FF;
+    --dm-texto: #C0C0C0; 
+    --dm-texto-secundario: #808080;
+    --dm-fondo: #0D2235; 
+    --dm-fondo-secundario: #123450; 
+    --dm-borde: #2a4a68;
+    --dm-sombra: rgba(0,0,0,0.2);
 }
 
 /* --- Estilos Globales --- */
@@ -16,6 +30,7 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -26,12 +41,13 @@ body {
 
 /* --- Header y Navegación --- */
 header {
-    background-color: var(--color-blanco);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--color-fondo-secundario);
+    box-shadow: 0 2px 5px var(--color-sombra);
     padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-bar {
@@ -45,7 +61,7 @@ header {
 }
 
 .logo-img {
-    height: 100px;
+    height: 65px;
     width: auto;
     display: block;
 }
@@ -63,13 +79,19 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--color-secundario);
+    color: var(--color-texto);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: var(--color-primario);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .menu-toggle {
@@ -79,12 +101,36 @@ header {
     color: var(--color-secundario);
 }
 
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--color-texto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+.theme-toggle:hover {
+    color: var(--color-primario);
+}
+.theme-toggle svg {
+    width: 22px;
+    height: 22px;
+}
+
+.theme-toggle .icon-moon { display: block; }
+.theme-toggle .icon-sun { display: none; }
+
+
 /* --- Hero (Sección principal) --- */
 .hero {
     background-color: var(--color-secundario);
     color: var(--color-blanco);
     padding: 80px 0;
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .hero h1 {
@@ -100,23 +146,6 @@ header {
     margin-right: auto;
 }
 
-/* --- Botones --- */
-.cta-button {
-    background-color: var(--color-primario);
-    color: var(--color-blanco);
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    border: 2px solid var(--color-primario);
-}
-
-.cta-button:hover {
-    background-color: var(--color-blanco);
-    color: var(--color-primario);
-}
-
 .cta-button-secondary {
     background-color: transparent;
     color: var(--color-primario);
@@ -126,7 +155,7 @@ header {
     font-weight: bold;
     transition: all 0.3s ease;
     border: 2px solid var(--color-primario);
-    display: inline-block; /* Asegura que se aplique el padding */
+    display: inline-block; 
 }
 
 .cta-button-secondary:hover {
@@ -138,10 +167,11 @@ header {
 /* --- Secciones Generales --- */
 section {
     padding: 60px 0;
+    transition: background-color 0.3s ease;
 }
 
 section:nth-child(even) {
-    background-color: var(--color-blanco);
+    background-color: var(--color-fondo-secundario);
 }
 
 h2 {
@@ -149,9 +179,10 @@ h2 {
     font-size: 2.2rem;
     color: var(--color-secundario);
     margin-bottom: 40px;
+    transition: color 0.3s ease;
 }
 
-/* --- Sección Proyecto GeClau --- */
+/* --- Sección Proyecto --- */
 .proyecto-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -168,14 +199,16 @@ h2 {
     color: var(--color-secundario);
     margin-top: 30px;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
 .proyecto-imagen {
     width: 100%;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border: 1px solid #ddd;
+    box-shadow: 0 10px 25px var(--color-sombra);
+    border: 1px solid var(--color-borde);
     overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .proyecto-imagen img {
@@ -187,7 +220,7 @@ h2 {
     margin-top: 30px;
 }
 
-/* --- Stack Tecnológico (con hover) --- */
+/* --- Stack Tecnológico  --- */
 .tech-stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -207,8 +240,8 @@ h2 {
 
 .tech-item:hover {
     transform: scale(1.1);
-    background-color: var(--color-blanco);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background-color: var(--color-fondo-secundario); 
+    box-shadow: 0 4px 15px var(--color-sombra);
 }
 
 .tech-item img {
@@ -216,17 +249,19 @@ h2 {
     width: 40px;
 }
 
+.dark-mode .tech-item img[alt="Express.js"] {
+    filter: invert(1);
+}
+
 .tech-item span {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-texto);
-    /* Oculto por defecto */
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .tech-item:hover span {
-    /* Visible en hover */
     opacity: 1;
 }
 
@@ -238,18 +273,18 @@ h2 {
 }
 
 .miembro {
-    background-color: var(--color-blanco);
+    background-color: var(--color-fondo-secundario);
     padding: 25px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px var(--color-sombra);
+    border: 1px solid var(--color-borde);
     transition: all 0.3s ease;
 }
 
 .miembro:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px var(--color-sombra);
 }
 
 .miembro h3 {
@@ -260,9 +295,10 @@ h2 {
 
 .miembro p {
     font-size: 1rem;
-    color: var(--color-texto-secundario); /* Usamos el gris del logo */
+    color: var(--color-texto-secundario);
     margin: 0;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
 }
 
 .social-links {
@@ -285,6 +321,7 @@ h2 {
 .social-links svg {
     width: 24px;
     height: 24px;
+    transition: filter 0.3s ease;
 }
 
 /* --- Sección Contacto --- */
@@ -305,12 +342,98 @@ footer {
     text-align: center;
     padding: 30px 0;
     margin-top: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 footer p {
     margin: 0;
     font-size: 0.9rem;
 }
+
+
+/* --- MODO OSCURO --- */
+
+body.dark-mode {
+    background-color: var(--dm-fondo);
+    color: var(--dm-texto);
+}
+
+.dark-mode header {
+    background-color: var(--dm-fondo-secundario);
+    box-shadow: 0 2px 5px var(--dm-sombra);
+}
+.dark-mode .nav-links a {
+    color: var(--dm-secundario);
+}
+.dark-mode .menu-toggle {
+    color: var(--dm-secundario);
+}
+.dark-mode .theme-toggle {
+    color: var(--dm-secundario);
+}
+
+.dark-mode .theme-toggle .icon-moon { display: none; }
+.dark-mode .theme-toggle .icon-sun { display: block; }
+
+.dark-mode .hero {
+   background-color: var(--color-secundario);
+    color: var(--dm-secundario);
+}
+
+.dark-mode .nav-links a:hover {
+    color: var(--color-primario);
+}
+
+.dark-mode .cta-button-secondary:hover {
+    color: var(--dm-fondo-secundario);
+}
+
+.dark-mode section:nth-child(even) {
+    background-color: var(--dm-fondo-secundario);
+}
+.dark-mode h2 {
+    color: var(--dm-secundario);
+}
+
+.dark-mode .proyecto-info h3 {
+    color: var(--dm-secundario);
+}
+.dark-mode .proyecto-imagen {
+    box-shadow: 0 10px 25px var(--dm-sombra);
+    border: 1px solid var(--dm-borde);
+}
+
+.dark-mode .tech-item:hover {
+    background-color: var(--dm-fondo); /* Invertimos el hover */
+    box-shadow: 0 4px 15px var(--dm-sombra);
+}
+.dark-mode .tech-item span {
+    color: var(--dm-texto);
+}
+
+.dark-mode .miembro {
+    background-color: var(--dm-fondo-secundario);
+    box-shadow: 0 2px 8px var(--dm-sombra);
+    border: 1px solid var(--dm-borde);
+}
+.dark-mode .miembro:hover {
+    box-shadow: 0 8px 20px var(--dm-sombra);
+}
+.dark-mode .miembro p {
+    color: var(--dm-texto);
+}
+.dark-mode .social-links a {
+    color: var(--color-blanco);
+}
+.dark-mode .social-links a:hover {
+    color: var(--dm-primario);
+}
+
+.dark-mode footer {
+    background-color: #000; 
+    color: var(--dm-secundario);
+}
+
 
 /* --- Responsive (Móvil) --- */
 @media (max-width: 768px) {
@@ -319,10 +442,17 @@ footer p {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 75px; /* Ajustado a la nueva altura del header (10px + 65px + 10px) */
+        top: 85px; 
         left: 0;
-        background-color: var(--color-blanco);
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        background-color: var(--color-fondo-secundario);
+        box-shadow: 0 4px 10px var(--color-sombra);
+        border-top: 1px solid var(--color-borde);
+    }
+    
+  
+    .dark-mode .nav-links {
+        background-color: var(--dm-fondo-secundario);
+        border-top: 1px solid var(--dm-borde);
     }
 
     .nav-links.active {
@@ -338,8 +468,13 @@ footer p {
     .nav-links a {
         padding: 15px;
         display: block;
-        border-bottom: 1px solid var(--color-fondo);
+        border-bottom: 1px solid var(--color-borde);
     }
+
+    .dark-mode .nav-links a {
+        border-bottom: 1px solid var(--dm-borde);
+    }
+
 
     .menu-toggle {
         display: block;
@@ -354,7 +489,7 @@ footer p {
     }
 
     .proyecto-imagen {
-        order: -1; /* Mueve la imagen arriba en móvil */
+        order: -1; 
         margin-bottom: 30px;
     }
 }
