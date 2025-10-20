@@ -3,7 +3,7 @@
     --color-primario: #00AEEF; /* Cyan/Azul claro del logo */
     --color-secundario: #0D2235; /* Azul oscuro/Negro del logo */
     --color-texto: #333333;
-    --color-texto-secundario: #808080; /* Gris del logo (para "Solutions") */
+    --color-texto-secundario: #808080; /* Gris del logo */
     --color-fondo: #f4f7f6;
     --color-blanco: #ffffff;
 }
@@ -45,7 +45,7 @@ header {
 }
 
 .logo-img {
-    height: 50px; /* Ajusta esto si es necesario */
+    height: 100px;
     width: auto;
     display: block;
 }
@@ -319,7 +319,7 @@ footer p {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 70px; /* Ajustado a la altura del header (10px + 50px + 10px) */
+        top: 75px; /* Ajustado a la nueva altura del header (10px + 65px + 10px) */
         left: 0;
         background-color: var(--color-blanco);
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
