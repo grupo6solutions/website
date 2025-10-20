@@ -4,302 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grupo 6 Solutions - Gestión de Horarios y Aulas</title>
-    <style>
-      :root {
-        --color-primario: #005a9c; /* Azul UTN */
-        --color-secundario: #0d2235;
-        --color-texto: #333;
-        --color-fondo: #f4f7f6;
-        --color-blanco: #ffffff;
-      }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--color-fondo);
-        color: var(--color-texto);
-        line-height: 1.6;
-      }
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-      /* --- Header y Navegación --- */
-      header {
-        background-color: var(--color-blanco);
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 10px 0; /* Un poco menos de padding */
-        position: sticky;
-        top: 0;
-        z-index: 100;
-      }
-      .nav-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .logo-link {
-        display: inline-block;
-      }
-      .logo-img {
-        height: 50px; /* Ajusta esto al tamaño de tu logo */
-        width: auto;
-        display: block;
-      }
-      .nav-links {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-      }
-      .nav-links li {
-        margin-left: 25px;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--color-secundario);
-        font-weight: 500;
-        transition: color 0.3s ease;
-      }
-      .nav-links a:hover {
-        color: var(--color-primario);
-      }
-      .menu-toggle {
-        display: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
-
-      /* --- Hero (Sección principal) --- */
-      .hero {
-        background-color: var(--color-secundario);
-        color: var(--color-blanco);
-        padding: 80px 0;
-        text-align: center;
-      }
-      .hero h1 {
-        font-size: 2.8rem;
-        margin-bottom: 10px;
-      }
-      .hero p {
-        font-size: 1.2rem;
-        margin-bottom: 30px;
-        max-width: 700px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .cta-button {
-        background-color: var(--color-primario);
-        color: var(--color-blanco);
-        padding: 12px 25px;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        border: 2px solid var(--color-primario);
-      }
-      .cta-button:hover {
-        background-color: var(--color-blanco);
-        color: var(--color-primario);
-      }
-
-      /* --- Secciones Generales --- */
-      section {
-        padding: 60px 0;
-      }
-      section:nth-child(even) {
-        background-color: var(--color-blanco);
-      }
-      h2 {
-        text-align: center;
-        font-size: 2.2rem;
-        color: var(--color-secundario);
-        margin-bottom: 40px;
-      }
-
-      /* --- Sección Proyecto GeClau --- */
-      .proyecto-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-      }
-      .proyecto-info p {
-        margin-bottom: 20px;
-      }
-      .proyecto-info h3 {
-        font-size: 1.5rem;
-        color: var(--color-secundario);
-        margin-top: 30px;
-        margin-bottom: 15px;
-      }
-      .proyecto-imagen {
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        border: 1px solid #ddd;
-        overflow: hidden;
-      }
-      .proyecto-imagen img {
-        width: 100%;
-        display: block;
-      }
-      .proyecto-cta-container {
-        margin-top: 30px;
-      }
-
-      /* --- Nuevo Stack Tecnológico --- */
-      .tech-stack-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 25px;
-        justify-items: center;
-      }
-      .tech-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding: 15px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-      }
-      .tech-item:hover {
-        transform: scale(1.1);
-        background-color: var(--color-blanco);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      }
-      .tech-item img {
-        height: 40px;
-        width: 40px;
-      }
-      .tech-item span {
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--color-texto);
-      }
-
-      /* --- Sección Equipo --- */
-      .equipo-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-      }
-      .miembro {
-        background-color: var(--color-blanco);
-        padding: 25px;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e0e0e0;
-        transition: all 0.3s ease;
-      }
-      .miembro:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      }
-      .miembro h3 {
-        font-size: 1.3rem;
-        color: var(--color-primario);
-        margin-bottom: 5px;
-      }
-      .miembro p {
-        font-size: 1rem;
-        color: #555;
-        margin: 0;
-        margin-bottom: 15px;
-      }
-      .social-links {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-      }
-      .social-links a {
-        text-decoration: none;
-        color: var(--color-secundario);
-        transition: all 0.3s ease;
-      }
-      .social-links a:hover {
-        color: var(--color-primario);
-        transform: scale(1.1);
-      }
-      .social-links svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      /* --- Sección Contacto --- */
-      #contacto {
-        text-align: center;
-      }
-      #contacto p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto 30px auto;
-      }
-
-      /* --- Footer --- */
-      footer {
-        background-color: var(--color-secundario);
-        color: var(--color-blanco);
-        text-align: center;
-        padding: 30px 0;
-        margin-top: 40px;
-      }
-      footer p {
-        margin: 0;
-        font-size: 0.9rem;
-      }
-
-      /* --- Responsive (Móvil) --- */
-      @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          position: absolute;
-          top: 70px; /* Ajustado a la altura del header (10px + 50px + 10px) */
-          left: 0;
-          background-color: var(--color-blanco);
-          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .nav-links.active {
-          display: flex;
-        }
-        .nav-links li {
-          margin: 0;
-          width: 100%;
-          text-align: center;
-        }
-        .nav-links a {
-          padding: 15px;
-          display: block;
-          border-bottom: 1px solid var(--color-fondo);
-        }
-        .menu-toggle {
-          display: block;
-        }
-        .hero h1 {
-          font-size: 2.2rem;
-        }
-        .proyecto-grid {
-          grid-template-columns: 1fr;
-        }
-        .proyecto-imagen {
-          order: -1; /* Mueve la imagen arriba en móvil */
-          margin-bottom: 30px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <div class="container nav-bar">
         <a href="#" class="logo-link">
           <img
-            src="PEGAR_LOGO_BASE64_AQUI"
+            src="images/logo.png"
             alt="Grupo 6 Solutions Logo"
             class="logo-img"
           />
@@ -307,6 +19,7 @@
         <nav>
           <ul class="nav-links" id="nav-links">
             <li><a href="#proyecto">El Proyecto</a></li>
+            <li><a href="#tecnologias">Tecnologías</a></li>
             <li><a href="#equipo">El Equipo</a></li>
             <li><a href="#contacto">Contacto</a></li>
           </ul>
@@ -332,12 +45,10 @@
           <div class="proyecto-grid">
             <div class="proyecto-info">
               <p>
-                <strong>GeClau (Gestión de Clases y Aulas)</strong> nació de un
-                problema real. Uno de nuestros miembros, trabajando en la
-                <strong>UTN Facultad Regional Mar del Plata (UTN FRMDP)</strong
-                >, detectó las dificultades e ineficiencias de la gestión manual
-                de horarios y aulas, que dependía enteramente de hojas de
-                cálculo.
+                GeClau (Gestión de Clases y Aulas) nació de un problema real.
+                Uno de nuestros miembros, trabajando en la UTN FRMDP, detectó
+                las dificultades e ineficiencias de la gestión manual de
+                horarios y aulas, que dependía enteramente de hojas de cálculo.
               </p>
               <p>
                 Propusimos GeClau como nuestro proyecto de tesis para la
@@ -365,15 +76,15 @@
                   href="https://geclau.duckdns.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="cta-button"
+                  class="cta-button-secondary"
                 >
-                  Ver la App en Vivo
+                  Ir al Sitio
                 </a>
               </div>
             </div>
             <div class="proyecto-imagen">
               <img
-                src="PEGAR_SCREENSHOT_BASE64_AQUI"
+                src="images/geclau.jpg"
                 alt="Screenshot de la aplicación GeClau"
               />
             </div>
@@ -448,6 +159,18 @@
             tecnológicas robustas y eficientes.
           </p>
           <div class="equipo-grid">
+            <svg
+              id="github-icon"
+              style="display: none"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+
             <div class="miembro">
               <h3>Nicolas Kaminski</h3>
               <p>Desarrollador Frontend, Diseñador UI/UX</p>
@@ -467,6 +190,14 @@
                       d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                     />
                   </svg>
+                </a>
+                <a
+                  href="https://github.com/nicoKaminski"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Nicolas Kaminski"
+                >
+                  <svg><use href="#github-icon"></use></svg>
                 </a>
               </div>
             </div>
@@ -490,6 +221,14 @@
                     />
                   </svg>
                 </a>
+                <a
+                  href="https://github.com/barbaraponce93"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Barbara Ponce"
+                >
+                  <svg><use href="#github-icon"></use></svg>
+                </a>
               </div>
             </div>
             <div class="miembro">
@@ -511,6 +250,14 @@
                       d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                     />
                   </svg>
+                </a>
+                <a
+                  href="https://github.com/ariel7171"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Ariel Ayala"
+                >
+                  <svg><use href="#github-icon"></use></svg>
                 </a>
               </div>
             </div>
@@ -534,6 +281,14 @@
                     />
                   </svg>
                 </a>
+                <a
+                  href="https://github.com/NahuelRoman1990"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Nahuel Roman"
+                >
+                  <svg><use href="#github-icon"></use></svg>
+                </a>
               </div>
             </div>
             <div class="miembro">
@@ -555,6 +310,14 @@
                       d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
                     />
                   </svg>
+                </a>
+                <a
+                  href="https://github.com/calipto722"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub de Calipto Martinez"
+                >
+                  <svg><use href="#github-icon"></use></svg>
                 </a>
               </div>
             </div>
@@ -587,22 +350,6 @@
       </div>
     </footer>
 
-    <script>
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-
-      menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-      });
-
-      // Cierra el menú al hacer clic en un enlace (en móvil)
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          if (navLinks.classList.contains("active")) {
-            navLinks.classList.remove("active");
-          }
-        });
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
