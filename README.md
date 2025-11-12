@@ -88,5 +88,5 @@ Este es un sitio web estático, por lo que su instalación y uso son muy sencill
 
 Si estás interesado en GeClau o tienes un proyecto en mente, no dudes en contactarnos:
 
-- **Formulario de Contacto**: Utiliza el formulario disponible en la sección de [Contacto](#contacto) del sitio web.
-- **Email**: Envíanos un correo electrónico a [grupo6solutions@gmail.com](mailto:grupo6solutions@gmail.com).
+- **Formulario de Contacto**: Utiliza el formulario disponible en la sección de contacto del sitio web.
+- **Email**: Envíanos un correo electrónico a [mail](mailto:grupo6solutions@gmail.com).
