@@ -59,6 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
 
       const formData = new FormData(contactForm);
+      const turnstileResponse = formData.get("cf-turnstile-response");
+
+      if (!turnstileResponse) {
+        formStatus.textContent = "Por favor completa el captcha.";
+        formStatus.className = "error";
+        formStatus.style.display = "block";
+        return;
+      }
       const button = contactForm.querySelector("button[type='submit']");
 
       button.disabled = true;
