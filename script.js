@@ -18,10 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
   const applyTheme = (theme) => {
+    const logo = document.querySelector(".logo-img");
     if (theme === "dark") {
       body.classList.add("dark-mode");
+      if (logo) logo.src = "images/logoExagonoD.png";
     } else {
       body.classList.remove("dark-mode");
+      if (logo) logo.src = "images/logoExagonoL.png";
     }
   };
 

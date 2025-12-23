@@ -10,6 +10,9 @@
   --color-borde: #e0e0e0;
   --color-sombra: rgba(0, 0, 0, 0.05);
   --color-blanco: #ffffff;
+  --color-grupo6: #13293C;
+  --color-grupo6-dark: #E8F4FB;
+  --color-solutions: #1BACE2;
 
   /* Modo Oscuro (se activará con .dark-mode) */
   --dm-primario: #00aeef;
@@ -60,13 +63,38 @@ header {
 }
 
 .logo-link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
 }
 
 .logo-img {
-  height: 65px;
+  height: 75px; 
   width: auto;
   display: block;
+}
+
+.logo-text {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.logo-text .grupo-6 {
+  color: var(--color-grupo6);
+  transition: color 0.3s ease;
+}
+
+.logo-text .solutions {
+  color: var(--color-solutions);
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .nav-links {
@@ -517,6 +545,10 @@ body.dark-mode {
 }
 .dark-mode .theme-toggle .icon-sun {
   display: block;
+}
+
+.dark-mode .logo-text .grupo-6 {
+  color: var(--color-grupo6-dark);
 }
 
 .dark-mode .hero {
