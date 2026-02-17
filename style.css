@@ -251,6 +251,9 @@ h2 {
 
 .proyecto-cta-container {
   margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 /* --- Stack Tecnológico  --- */
