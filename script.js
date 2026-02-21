@@ -117,4 +117,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
   }
+
+  const btnSolicitarAcceso = document.getElementById("btn-solicitar-acceso");
+  const messageTextarea = document.getElementById("message");
+
+  if (btnSolicitarAcceso && messageTextarea) {
+    btnSolicitarAcceso.addEventListener("click", () => {
+      messageTextarea.value =
+        "Hola, me comunico desde el formulario de la página para solicitarles acceso a la demo de geclau....";
+      messageTextarea.focus();
+    });
+  }
 });
