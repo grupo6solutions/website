@@ -381,9 +381,66 @@ footer {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 footer p {
   margin: 0;
   font-size: 0.9rem;
+  text-align: left;
+}
+
+.social-links-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-links-footer a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.social-links-footer svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Hover effects */
+.social-link-linkedin:hover {
+  color: #2b6cb0; /* Equivalente a blue.600 en Chakra UI */
+}
+
+.social-link-instagram:hover {
+  color: #ed64a6; /* Equivalente a pink.400 en Chakra UI */
+}
+
+/* Focus styles for accessibility */
+.social-links-footer a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-blanco);
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  footer p {
+    text-align: center;
+  }
 }
 
 /* --- Sección Contacto y Formulario --- */
