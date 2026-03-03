@@ -10,9 +10,9 @@
   --color-borde: #e0e0e0;
   --color-sombra: rgba(0, 0, 0, 0.05);
   --color-blanco: #ffffff;
-  --color-grupo6: #13293C;
-  --color-grupo6-dark: #E8F4FB;
-  --color-solutions: #1BACE2;
+  --color-grupo6: #13293c;
+  --color-grupo6-dark: #e8f4fb;
+  --color-solutions: #1bace2;
 
   /* Modo Oscuro (se activará con .dark-mode) */
   --dm-primario: #00aeef;
@@ -27,14 +27,17 @@
 
 /* --- Estilos Globales --- */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
@@ -53,7 +56,9 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .nav-bar {
@@ -70,7 +75,7 @@ header {
 }
 
 .logo-img {
-  height: 75px; 
+  height: 75px;
   width: auto;
   display: block;
 }
@@ -241,7 +246,9 @@ h2 {
   box-shadow: 0 10px 25px var(--color-sombra);
   border: 1px solid var(--color-borde);
   overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .proyecto-imagen img {
@@ -256,28 +263,149 @@ h2 {
   flex-wrap: wrap;
 }
 
-/* --- Stack Tecnológico  --- */
-.tech-stack-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 25px;
-  justify-items: center;
+/* --- Planes y Licencias --- */
+.planes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.plan-card {
+  background-color: var(--color-fondo-secundario);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  padding: 40px 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px var(--color-sombra);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--color-sombra);
+}
+
+.plan-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-primario);
+}
+
+.plan-card h3 {
+  color: var(--color-primario);
+  font-size: 1.6rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.plan-card p {
+  color: var(--color-texto-secundario);
+  margin-bottom: 25px;
+  min-height: 50px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.plan-card ul li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plan-card ul li::before {
+  content: "✓";
+  color: var(--color-primario);
+  font-weight: bold;
+}
+
+/* --- Stack Tecnológico (Animado) --- */
+.tech-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+}
+
+.tech-marquee-wrapper::before,
+.tech-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.tech-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-fondo), transparent);
+}
+
+.tech-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-fondo), transparent);
+}
+
+.tech-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-tech 40s linear infinite;
+}
+
+.tech-marquee:hover {
+  animation-play-state: paused;
+}
+
+.tech-stack-row {
+  display: flex;
+  gap: 30px;
+  padding: 0 15px;
+}
+
+@keyframes scroll-tech {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .tech-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 15px;
-  border-radius: 8px;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px 30px;
+  background-color: var(--color-fondo-secundario);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
   transition: all 0.3s ease;
+  min-width: 110px;
+  box-shadow: 0 4px 10px var(--color-sombra);
 }
 
 .tech-item:hover {
-  transform: scale(1.1);
-  background-color: var(--color-fondo-secundario);
-  box-shadow: 0 4px 15px var(--color-sombra);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--color-sombra);
+  border-color: var(--color-primario);
 }
 
 .tech-item img {
@@ -285,20 +413,15 @@ h2 {
   width: 40px;
 }
 
-.dark-mode .tech-item img[alt="Express.js"] {
+.dark-mode .tech-item img[alt="Express.js"],
+.dark-mode .tech-item img[alt="JWT"] {
   filter: invert(1);
 }
 
 .tech-item span {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-texto);
-  opacity: 0;
-  transition: opacity 0.3s ease, color 0.3s ease;
-}
-
-.tech-item:hover span {
-  opacity: 1;
 }
 
 /* --- Sección Equipo --- */
@@ -378,7 +501,9 @@ footer {
   text-align: center;
   padding: 30px 0;
   margin-top: 40px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .footer-content {
@@ -639,12 +764,33 @@ body.dark-mode {
   border: 1px solid var(--dm-borde);
 }
 
+.dark-mode .tech-item {
+  background-color: var(--dm-fondo-secundario);
+  border-color: var(--dm-borde);
+}
 .dark-mode .tech-item:hover {
-  background-color: var(--dm-fondo); /* Invertimos el hover */
-  box-shadow: 0 4px 15px var(--dm-sombra);
+  background-color: var(--dm-fondo);
+  box-shadow: 0 8px 20px var(--dm-sombra);
+  border-color: var(--dm-primario);
 }
 .dark-mode .tech-item span {
   color: var(--dm-texto);
+}
+
+.dark-mode .tech-marquee-wrapper::before {
+  background: linear-gradient(to right, var(--dm-fondo), transparent);
+}
+.dark-mode .tech-marquee-wrapper::after {
+  background: linear-gradient(to left, var(--dm-fondo), transparent);
+}
+
+.dark-mode .plan-card {
+  background-color: var(--dm-fondo-secundario);
+  border-color: var(--dm-borde);
+  box-shadow: 0 8px 20px var(--dm-sombra);
+}
+.dark-mode .plan-card p {
+  color: var(--dm-texto-secundario);
 }
 
 .dark-mode .miembro {

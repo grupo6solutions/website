@@ -14,7 +14,7 @@ Este repositorio contiene el código fuente del sitio web de Grupo 6 Solutions, 
 
 GeClau (Gestión de Clases y Aulas) es una solución de software desarrollada por Grupo 6 Solutions para optimizar la gestión académica. Nació de la necesidad de automatizar y centralizar la asignación de horarios y aulas en instituciones educativas, eliminando las ineficiencias de los sistemas manuales basados en hojas de cálculo.
 
-Actualmente, GeClau está siendo probado con éxito por la UTN de Mar del Plata y se planea expandir sus funcionalidades para incluir asignación automática de aulas y horarios, así como un agente de IA para consultas de alumnos.
+Actualmente, GeClau es un producto consolidado e implementado con éxito en la UTN Facultad Regional Mar del Plata, listo y preparado para su adopción comercial (vía SaaS o licencias On-Premise) en otras sedes regionales y universidades del país. El proyecto sigue incorporando funciones innovadoras orientadas a la automatización inteligente.
 
 ## Características del Sitio Web
 
@@ -34,14 +34,20 @@ El sitio web de Grupo 6 Solutions y el proyecto GeClau utilizan las siguientes t
 - **React 19**: Biblioteca de JavaScript para construir interfaces de usuario.
 - **TypeScript**: Superset de JavaScript que añade tipado estático.
 - **Vite**: Herramienta de construcción rápida para proyectos web modernos.
+- **Chakra UI**: Framework de componentes UI modernos y accesibles.
+- **React Router**: Para el manejo de navegación y ruteo interno.
 
-**Backend (para GeClau, no para este sitio web estático):**
+**Backend y Arquitectura:**
 
 - **Node.js**: Entorno de ejecución de JavaScript del lado del servidor.
 - **Express.js**: Framework web para Node.js.
-- **Zod**: Biblioteca de declaración y validación de esquemas.
+- **TypeScript**: Para garantizar integridad estructural profunda en el código del servidor.
+- **Zod**: Biblioteca de declaración y validación estricta de esquemas y payloads.
 - **TypeORM**: ORM (Object-Relational Mapper) para TypeScript y JavaScript.
 - **MySQL**: Sistema de gestión de bases de datos relacionales.
+- **Docker**: Contenerización de servicios para escalabilidad y facilidad de despliegue.
+- **JWT y Autenticación**: Sesiones seguras a través de cookies httpOnly en una API REST blindada.
+- **Cloudflare Turnstile**: Integración de captcha y capa anti-bots en endpoints críticos de login.
 
 ## El Equipo
 
