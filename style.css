@@ -156,6 +156,22 @@ header {
   height: 22px;
 }
 
+.nav-cta-button {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 6px 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-primario);
+}
+.nav-cta-button:hover {
+  background-color: var(--color-blanco);
+  color: var(--color-primario);
+}
+
 .theme-toggle .icon-moon {
   display: block;
 }
@@ -183,6 +199,45 @@ header {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero-cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button-primary {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-primario);
+}
+
+.cta-button-primary:hover {
+  background-color: transparent;
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+.cta-hero-outline {
+  border-color: var(--color-blanco);
+  color: var(--color-blanco);
+  font-size: 1.1rem;
+  padding: 12px 25px;
+  border-radius: 6px;
+}
+
+.cta-hero-outline:hover {
+  background-color: var(--color-blanco);
+  color: var(--color-secundario);
 }
 
 .cta-button-secondary {
@@ -284,6 +339,8 @@ h2 {
     box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .plan-card:hover {
@@ -306,18 +363,20 @@ h2 {
   font-size: 1.6rem;
   margin-top: 0;
   margin-bottom: 15px;
+  min-height: 75px; /* Aligns two-line titles */
 }
 
 .plan-card p {
   color: var(--color-texto-secundario);
   margin-bottom: 25px;
-  min-height: 50px;
+  flex-grow: 1; /* Pushes the UL to the bottom uniformly */
 }
 
 .plan-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-top: auto; /* Ensure list is anchored at the bottom */
 }
 
 .plan-card ul li {
@@ -514,10 +573,29 @@ footer {
   gap: 20px;
 }
 
-footer p {
+.footer-brand p {
   margin: 0;
   font-size: 0.9rem;
   text-align: left;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-demo-link {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footer-demo-link:hover {
+  color: var(--color-primario);
 }
 
 .social-links-footer {
@@ -745,8 +823,44 @@ body.dark-mode {
   color: var(--color-primario);
 }
 
+.dark-mode .nav-cta-button {
+  background-color: transparent;
+  color: var(--dm-primario);
+  border-color: var(--dm-primario);
+}
+
+.dark-mode .nav-cta-button:hover {
+  background-color: var(--dm-primario);
+  color: var(--color-blanco);
+}
+
+.dark-mode .cta-button-primary {
+  background-color: var(--dm-primario);
+  border-color: var(--dm-primario);
+  color: var(--color-blanco);
+}
+
+.dark-mode .cta-button-primary:hover {
+  background-color: transparent;
+  color: var(--dm-primario);
+  border-color: var(--dm-primario);
+}
+
+.dark-mode .cta-hero-outline {
+  border-color: var(--color-blanco);
+  color: var(--color-blanco);
+}
+
+.dark-mode .cta-hero-outline:hover {
+  background-color: var(--dm-primario);
+  color: var(--color-blanco);
+  border-color: var(--dm-primario);
+}
+
 .dark-mode .cta-button-secondary:hover {
-  color: var(--dm-fondo-secundario);
+  color: var(--color-blanco);
+  background-color: var(--dm-primario);
+  border-color: var(--dm-primario);
 }
 
 .dark-mode section:nth-child(even) {
