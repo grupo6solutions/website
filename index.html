@@ -23,6 +23,9 @@
     />
     <meta property="og:type" content="website" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
@@ -36,7 +39,7 @@
         <a href="#" class="logo-link">
           <img
             src="images/logoExagonoD.png"
-            alt="Grupo 6 Solutions Logo"
+            alt="Grupo 6 Solutions"
             class="logo-img"
           />
           <div class="logo-text">
@@ -68,6 +71,7 @@
           >
             <svg
               class="icon-sun"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -78,6 +82,7 @@
             </svg>
             <svg
               class="icon-moon"
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -89,16 +94,25 @@
               />
             </svg>
           </button>
-          <div class="menu-toggle" id="menu-toggle">☰</div>
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            aria-label="Abrir menú"
+          >
+            ☰
+          </button>
         </div>
       </div>
     </header>
 
     <main>
       <section class="hero">
-        <div class="container">
-          <h1>Transformamos la gestión académica</h1>
-          <p>
+        <div class="hero-bg-effect"></div>
+        <div class="container hero-content-wrapper">
+          <h1 class="hero-title">Transformamos la gestión académica</h1>
+          <p class="hero-subtitle">
             Somos Grupo 6 Solutions, un equipo de desarrolladores que crea
             soluciones de software a medida para optimizar procesos educativos.
           </p>
@@ -118,9 +132,9 @@
       </section>
 
       <section id="proyecto">
-        <div class="container">
+        <div class="container project-container">
           <h2>Nuestro Proyecto: GeClau</h2>
-          <div class="proyecto-grid">
+          <div class="proyecto-grid asymmetrical-grid">
             <div class="proyecto-info">
               <p>
                 GeClau (Gestión de Clases y Aulas) nació de un problema real.
@@ -177,7 +191,7 @@
             <div class="proyecto-imagen">
               <img
                 src="images/geclau.jpg"
-                alt="Screenshot de la aplicación GeClau"
+                alt="Interfaz de la aplicación GeClau"
               />
             </div>
           </div>
@@ -669,6 +683,7 @@
             class="footer-demo-link"
           >
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
@@ -690,6 +705,7 @@
             class="social-link-linkedin"
           >
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -707,6 +723,7 @@
             class="social-link-instagram"
           >
             <svg
+              aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
