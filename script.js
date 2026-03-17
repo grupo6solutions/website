@@ -148,4 +148,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   elementsToAnimate.forEach(el => observer.observe(el));
+  // Update copyright year
+  const yearElement = document.getElementById("current-year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 });
+

@@ -39,6 +39,12 @@ body {
     color 0.3s ease;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
 *:focus-visible {
   outline: 2px solid var(--color-primario);
   outline-offset: 3px;
@@ -124,10 +130,10 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(248, 250, 252, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  z-index: 90;
+  background-color: rgba(248, 250, 252, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 2000;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-20px);
@@ -150,9 +156,9 @@ header {
   text-decoration: none;
   color: var(--color-texto);
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   transition: color 0.3s ease;
-  padding: 15px;
+  padding: 10px 15px;
   display: block;
   border-bottom: none;
 }

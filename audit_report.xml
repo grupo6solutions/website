@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<audit version="0.0.38">
+<site url="https://grupo6s.com" crawled="1" date="2026-03-17T14:32:52.920Z"/>
+<score overall="32" grade="F">
+ <cat name="Performance" score="83"/>
+ <cat name="Crawlability" score="63"/>
+ <cat name="Accessibility" score="96"/>
+ <cat name="E-E-A-T" score="57"/>
+ <cat name="Core SEO" score="76"/>
+ <cat name="Security" score="80"/>
+ <cat name="Links" score="83"/>
+ <cat name="Images" score="83"/>
+ <cat name="Legal Compliance" score="44"/>
+ <cat name="Content" score="100"/>
+ <cat name="Internationalization" score="100"/>
+ <cat name="Mobile" score="100"/>
+ <cat name="Social Media" score="100"/>
+ <cat name="URL Structure" score="100"/>
+</score>
+<summary passed="104" warnings="23" failed="3"/>
+<issues>
+ <category name="Crawlability" errors="1" warnings="1">
+  <rule id="crawl/sitemap-exists" severity="error" status="fail" docs="https://docs.squirrelscan.com/rules/crawl/sitemap-exists">
+   No XML sitemap found
+  </rule>
+  <rule id="crawl/robots-txt" severity="error" status="warn" docs="https://docs.squirrelscan.com/rules/crawl/robots-txt">
+   No robots.txt found
+  </rule>
+ </category>
+ <category name="Core SEO" errors="0" warnings="4">
+  <rule id="core/meta-title" severity="error" status="warn" docs="https://docs.squirrelscan.com/rules/core/meta-title">
+   Title too short
+   Pages (1): /
+   Items (1):
+    - / (Grupo 6 Solutions (17 chars))
+  </rule>
+  <rule id="core/meta-description" severity="error" status="warn" docs="https://docs.squirrelscan.com/rules/core/meta-description">
+   Description too short
+   Pages (1): /
+   Items (1):
+    - / (Equipo de desarrolladores de software a medida, es (98 chars))
+  </rule>
+  <rule id="core/canonical" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/core/canonical">
+   Missing canonical URL
+   Pages (1): /
+  </rule>
+  <rule id="core/favicon" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/core/favicon">
+   No favicon found
+   Pages (1): /
+  </rule>
+ </category>
+ <category name="Security" errors="0" warnings="4">
+  <rule id="security/csp" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/security/csp">
+   No Content-Security-Policy header
+  </rule>
+  <rule id="security/hsts" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/security/hsts">
+   Missing Strict-Transport-Security header
+  </rule>
+  <rule id="security/x-frame-options" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/security/x-frame-options">
+   No clickjacking protection
+  </rule>
+  <rule id="security/http-to-https" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/security/http-to-https">
+   1 HTTP URL(s) redirect to HTTPS
+   Items (1):
+    - http://grupo6s.com/ (http://grupo6s.com/ → https://grupo6s.com/ (301)) [statusCode: 301, chain: {&quot;sourceUrl&quot;:&quot;http://grupo6s.com/&quot;,&quot;finalUrl&quot;:&quot;https://grupo6s.com/&quot;,&quot;hops&quot;:[{&quot;url&quot;:&quot;http://grupo6s.com/&quot;,&quot;statusCode&quot;:301,&quot;type&quot;:&quot;http&quot;},{&quot;url&quot;:&quot;https://grupo6s.com/&quot;,&quot;statusCode&quot;:200,&quot;type&quot;:&quot;http&quot;}…]
+  </rule>
+ </category>
+ <category name="Links" errors="0" warnings="3">
+  <rule id="links/broken-external-links" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/links/broken-external-links">
+   5 broken external link(s): 5 with 999
+   Items (5):
+    - https://www.linkedin.com/in/nkaminski-profile/ (https://www.linkedin.com/in/nkaminski-profile/ (999)) [status: 999] (from: /)
+    - https://www.linkedin.com/in/ariel-ayala-49006823a/ (https://www.linkedin.com/in/ariel-ayala-49006823a/ (999)) [status: 999] (from: /)
+    - https://www.linkedin.com/in/b%C3%A1rbara-ponce/ (https://www.linkedin.com/in/b%C3%A1rbara-ponce/ (999)) [status: 999] (from: /)
+    - https://www.linkedin.com/in/nahuel-roman-168320287/ (https://www.linkedin.com/in/nahuel-roman-168320287/ (999)) [status: 999] (from: /)
+    - https://www.linkedin.com/in/calipto-martinez-4a2754276/ (https://www.linkedin.com/in/calipto-martinez-4a2754276/ (999)) [status: 999] (from: /)
+  </rule>
+  <rule id="links/internal-links" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/links/internal-links">
+   Too few internal links (0, min 1)
+   Pages (1): /
+   Items (1):
+    - / (Too few internal links (0, min 1))
+  </rule>
+  <rule id="links/dead-end-pages" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/links/dead-end-pages">
+   Page has no outgoing internal links (dead-end)
+   Pages (1): /
+  </rule>
+ </category>
+ <category name="Images" errors="0" warnings="2">
+  <rule id="images/offscreen-lazy" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/images/offscreen-lazy">
+   23 below-fold image(s) without lazy loading
+   Pages (1): /
+   Items (5/10):
+    - 3178C6
+    - 339933
+    - 000000
+    - 3E67B1
+    - E8372D
+  </rule>
+  <rule id="images/dimensions" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/images/dimensions">
+   26 image(s) missing width/height (causes CLS)
+   Pages (1): /
+   Items (5/26):
+    - /images/logoExagonoD.png | &lt;img src=&quot;https://grupo6s.com/images/logoExagonoD.png&quot; alt=&quot;Grupo 6 Solutions&quot;&gt;
+    - /images/geclau.jpg | &lt;img src=&quot;https://grupo6s.com/images/geclau.jpg&quot; alt=&quot;Interfaz de la aplicación GeClau&quot;&gt;
+    - https://cdn.simpleicons.org/react/61DAFB | &lt;img src=&quot;https://cdn.simpleicons.org/react/61DAFB&quot; alt=&quot;React&quot;&gt;
+    - https://cdn.simpleicons.org/typescript/3178C6 | &lt;img src=&quot;https://cdn.simpleicons.org/typescript/3178C6&quot; alt=&quot;TypeScript&quot;&gt;
+    - https://cdn.simpleicons.org/nodedotjs/339933 | &lt;img src=&quot;https://cdn.simpleicons.org/nodedotjs/339933&quot; alt=&quot;Node.js&quot;&gt;
+  </rule>
+ </category>
+ <category name="Performance" errors="1" warnings="3">
+  <rule id="perf/lcp-hints" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/perf/lcp-hints">
+   3 potential LCP image(s) without preload
+   Pages (1): /
+   Items (3):
+    - images/logoExagonoD.png
+    - images/geclau.jpg
+    - https://cdn.simpleicons.org/react/61DAFB
+  </rule>
+  <rule id="perf/cls-hints" severity="warning" status="fail" docs="https://docs.squirrelscan.com/rules/perf/cls-hints">
+   26 image(s) without width/height (CLS risk)
+   Pages (1): /
+   Items (5/26):
+    - images/logoExagonoD.png
+    - images/geclau.jpg
+    - https://cdn.simpleicons.org/react/61DAFB
+    - https://cdn.simpleicons.org/typescript/3178C6
+    - https://cdn.simpleicons.org/nodedotjs/339933
+  </rule>
+  <rule id="perf/critical-request-chains" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/perf/critical-request-chains">
+   2 critical request chain(s) found
+   Pages (1): /
+   Items (2):
+    - CSS: https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap
+    - CSS: style.css
+  </rule>
+  <rule id="perf/unminified-js" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/perf/unminified-js">
+   1 JavaScript file(s) appear unminified
+   Pages (1): /
+   Items (1):
+    - script.js (4.8KB, ~1.5KB savings) [reason: high newlines (3.05%), long variable names, formatted code, excessive whitespace]
+  </rule>
+ </category>
+ <category name="Accessibility" errors="1" warnings="0">
+  <rule id="a11y/label-content-name-mismatch" severity="error" status="fail" docs="https://docs.squirrelscan.com/rules/a11y/label-content-name-mismatch">
+   1 element(s) where visible text doesn&apos;t match accessible name
+   Pages (1): /
+   Items (1):
+    - button: visible=&quot;☰&quot; vs aria-label=&quot;abrir menú&quot;
+  </rule>
+ </category>
+ <category name="E-E-A-T" errors="0" warnings="5">
+  <rule id="eeat/about-page" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/eeat/about-page">
+   No About page found
+  </rule>
+  <rule id="eeat/author-byline" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/eeat/author-byline">
+   No content pages have author attribution
+  </rule>
+  <rule id="eeat/contact-page" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/eeat/contact-page">
+   No Contact page found
+  </rule>
+  <rule id="eeat/privacy-policy" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/eeat/privacy-policy">
+   No Privacy Policy page found
+  </rule>
+  <rule id="eeat/content-dates" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/eeat/content-dates">
+   No content pages have datePublished
+  </rule>
+ </category>
+ <category name="Legal Compliance" errors="0" warnings="1">
+  <rule id="legal/privacy-policy" severity="warning" status="warn" docs="https://docs.squirrelscan.com/rules/legal/privacy-policy">
+   No privacy policy link found across site
+  </rule>
+ </category>
+</issues>
+</audit>
