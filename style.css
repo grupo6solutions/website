@@ -448,9 +448,9 @@ h2 {
   width: 100%;
   box-shadow: 0 4px 12px var(--color-sombra);
   transition:
-    transform 0.5s cubic-bezier(0.25, 1, 0.3, 1),
-    box-shadow 0.5s cubic-bezier(0.25, 1, 0.3, 1),
-    border-color 0.5s ease;
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -458,8 +458,8 @@ h2 {
 }
 
 .plan-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 24px 48px var(--color-sombra), 0 0 0 2px var(--color-primario);
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 16px 30px var(--color-sombra), 0 0 0 1px var(--color-primario);
   border-color: transparent;
 }
 
@@ -598,13 +598,13 @@ h2 {
   background-color: var(--color-fondo-secundario);
   border: 1px solid var(--color-borde);
   border-radius: 12px;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
   min-width: 110px;
   box-shadow: 0 4px 10px var(--color-sombra);
 }
 
 .tech-item:hover {
-  transform: translateY(-8px) scale(1.05);
+  transform: translateY(-8px) scale(1.012);
   box-shadow: 0 16px 30px var(--color-sombra);
   border-color: var(--color-primario);
 }
@@ -639,14 +639,14 @@ h2 {
   text-align: center;
   box-shadow: 0 4px 12px var(--color-sombra);
   border: 1px solid var(--color-borde);
-  transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.25, 1, 0.3, 1), border-color 0.5s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
   position: relative;
   overflow: hidden;
 }
 
 .miembro:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 24px 48px var(--color-sombra), 0 0 0 2px var(--color-primario);
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 16px 30px var(--color-sombra), 0 0 0 1px var(--color-primario);
   border-color: transparent;
 }
 
@@ -1086,7 +1086,7 @@ body.dark-mode {
 }
 
 .dark-mode .plan-card:hover {
-  box-shadow: 0 24px 48px var(--dm-sombra), 0 0 0 2px var(--dm-primario);
+  box-shadow: 0 16px 30px var(--dm-sombra), 0 0 0 1px var(--dm-primario);
 }
 
 .dark-mode .plan-card p {
@@ -1100,7 +1100,7 @@ body.dark-mode {
 }
 
 .dark-mode .miembro:hover {
-  box-shadow: 0 24px 48px var(--dm-sombra), 0 0 0 2px var(--dm-primario);
+  box-shadow: 0 16px 30px var(--dm-sombra), 0 0 0 1px var(--dm-primario);
 }
 .dark-mode .miembro p {
   color: var(--dm-texto);
@@ -1115,7 +1115,7 @@ body.dark-mode {
 .dark-mode footer {
   background-color: var(--dm-fondo-secundario);
   color: var(--dm-secundario);
-  border-top: 1px solid var(--dm-borde);
+  border-top: none;
 }
 
 /* --- Formulario de Contacto (Modo Oscuro) --- */
@@ -1344,7 +1344,7 @@ body.dark-mode {
 }
 
 .seo-section {
-  background-color: var(--color-fondo-secundario);
+  background-color: var(--color-fondo);
 }
 
 .seo-section-header {
@@ -1375,11 +1375,15 @@ body.dark-mode {
 }
 
 .seo-feature-card {
-  background-color: var(--color-fondo);
+  background-color: var(--color-fondo-secundario);
   border: 1px solid var(--color-borde);
   border-radius: 16px;
   padding: 24px 20px;
   box-shadow: 0 4px 12px var(--color-sombra);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
 }
 
 .seo-feature-card-title {
@@ -1403,9 +1407,14 @@ body.dark-mode {
 .seo-use-case-item {
   border: 1px solid var(--color-borde);
   border-radius: 12px;
-  background-color: var(--color-fondo);
+  background-color: var(--color-fondo-secundario);
   padding: 18px 16px;
   color: var(--color-texto);
+  box-shadow: 0 4px 10px var(--color-sombra);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
 }
 
 .seo-faq-list {
@@ -1418,9 +1427,13 @@ body.dark-mode {
 .seo-faq-item {
   border: 1px solid var(--color-borde);
   border-radius: 16px;
-  background-color: var(--color-fondo);
+  background-color: var(--color-fondo-secundario);
   padding: 24px 20px;
   box-shadow: 0 4px 12px var(--color-sombra);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease;
 }
 
 .seo-faq-question {
@@ -1432,4 +1445,49 @@ body.dark-mode {
 .seo-faq-answer {
   margin: 0;
   color: var(--color-texto);
+}
+
+.seo-feature-card:hover,
+.seo-use-case-item:hover,
+.seo-faq-item:hover {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 0 16px 30px var(--color-sombra), 0 0 0 1px var(--color-primario);
+  border-color: transparent;
+}
+
+.dark-mode .seo-section {
+  background-color: var(--dm-fondo);
+}
+
+.dark-mode .seo-section-kicker {
+  color: var(--dm-primario);
+}
+
+.dark-mode .seo-section-lead {
+  color: var(--dm-texto-secundario);
+}
+
+.dark-mode .seo-feature-card,
+.dark-mode .seo-use-case-item,
+.dark-mode .seo-faq-item {
+  background-color: var(--dm-fondo-secundario);
+  border-color: var(--dm-borde);
+  box-shadow: 0 4px 12px var(--dm-sombra);
+}
+
+.dark-mode .seo-feature-card:hover,
+.dark-mode .seo-use-case-item:hover,
+.dark-mode .seo-faq-item:hover {
+  box-shadow: 0 16px 30px var(--dm-sombra), 0 0 0 1px var(--dm-primario);
+}
+
+.dark-mode .seo-feature-card-title,
+.dark-mode .seo-faq-question {
+  color: var(--dm-secundario);
+}
+
+.dark-mode .seo-feature-card-text,
+.dark-mode .seo-use-case-item,
+.dark-mode .seo-faq-answer {
+  color: var(--dm-texto);
 }
