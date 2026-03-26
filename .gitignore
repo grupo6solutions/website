@@ -1,0 +1,13 @@
+# Generated analysis artifacts
+audit_report.xml
+repomix-output.xml
+reports/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor temp files
+*.swp
+*.swo
+*~
