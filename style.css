@@ -593,10 +593,10 @@ h2 {
 }
 
 .proyecto-info h3 {
-  font-size: 1.5rem;
-  color: var(--color-secundario);
-  margin-top: 30px;
-  margin-bottom: 15px;
+  font-size: 1.6rem;
+  color: var(--color-primario);
+  margin-top: 0;
+  margin-bottom: 12px;
   transition: color 0.3s ease;
 }
 
@@ -686,6 +686,116 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+/* --- Cards y Secciones Home --- */
+.section-lead {
+  text-align: center;
+  max-width: 760px;
+  margin: -10px auto 40px auto;
+  font-size: 1.05rem;
+  color: var(--color-texto-secundario);
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.servicio-card {
+  background-color: var(--color-fondo-secundario);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  padding: 24px 20px;
+  box-shadow: 0 2px 8px var(--color-sombra);
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.servicio-card:hover,
+.servicio-card:active {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--color-sombra);
+  border-color: var(--color-primario);
+}
+
+.servicio-card h3 {
+  color: var(--color-primario);
+  font-size: 1.15rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.servicio-card p {
+  color: var(--color-texto-secundario);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.proyectos-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+/* --- Proyectos Home (Presentación editorial abierta) --- */
+#proyectos .proyecto-logo {
+  height: 32px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 16px;
+}
+
+#proyectos .proyecto-logo-tracam {
+  height: 42px;
+  margin-left: -5px;
+  margin-bottom: 10px;
+  margin-top: -4px;
+}
+
+#proyectos .proyecto-info h3 {
+  color: var(--color-secundario);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+
+.dark-mode #proyectos .proyecto-info h3 {
+  color: var(--dm-secundario);
+}
+
+#proyectos .proyecto-info p {
+  margin-bottom: 20px;
+}
+
+#proyectos .proyecto-cta-container {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  max-width: none;
+  margin-top: 24px;
+}
+
+#proyectos .proyecto-cta-container .cta-button-secondary {
+  width: auto;
+  display: inline-flex;
+}
+
+#proyectos .proyecto-imagen {
+  margin-bottom: 0;
 }
 
 /* --- Planes y Licencias --- */
@@ -1313,6 +1423,30 @@ body.dark-mode {
   background: linear-gradient(to left, var(--dm-fondo), transparent);
 }
 
+.dark-mode .section-lead {
+  color: var(--dm-texto-secundario);
+}
+
+.dark-mode .servicio-card {
+  background-color: var(--dm-fondo-secundario);
+  border-color: var(--dm-borde);
+  box-shadow: 0 2px 8px var(--dm-sombra);
+}
+
+.dark-mode .servicio-card:hover,
+.dark-mode .servicio-card:active {
+  box-shadow: 0 8px 20px var(--dm-sombra);
+  border-color: var(--dm-primario);
+}
+
+.dark-mode .servicio-card h3 {
+  color: var(--dm-primario);
+}
+
+.dark-mode .servicio-card p {
+  color: var(--dm-texto-secundario);
+}
+
 .dark-mode .plan-card {
   background-color: var(--dm-fondo-secundario);
   border-color: var(--dm-borde);
@@ -1655,6 +1789,19 @@ body.dark-mode {
     letter-spacing: -0.03em;
   }
 
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .servicio-card {
+    padding: 28px 24px;
+  }
+
+  .servicio-card h3 {
+    font-size: 1.2rem;
+  }
+
   .plan-card {
     padding: 40px 30px;
   }
@@ -1699,6 +1846,22 @@ body.dark-mode {
   .proyecto-grid {
     grid-template-columns: 1fr 1.3fr;
     gap: 60px;
+  }
+
+  .proyectos-showcase {
+    gap: 80px;
+  }
+
+  .proyecto-grid-reverse {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .proyecto-grid-reverse .proyecto-info {
+    order: 2;
+  }
+
+  .proyecto-grid-reverse .proyecto-imagen {
+    order: 1;
   }
 
   .proyecto-imagen {
@@ -1768,6 +1931,15 @@ body.dark-mode {
   .proyecto-imagen-interactive img,
   .proyecto-imagen-interactive:hover img {
     transition: none !important;
+    transform: none !important;
+  }
+
+  .servicio-card {
+    transition: none !important;
+  }
+
+  .servicio-card:hover,
+  .servicio-card:active {
     transform: none !important;
   }
 }
