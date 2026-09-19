@@ -37,35 +37,37 @@ La estructura objetivo del repositorio es:
 ```text
 /
 ├── index.html
+├── 404.html
 ├── style.css
 ├── script.js
 ├── favicon.png
 ├── robots.txt
 ├── sitemap.xml
 ├── llms.txt
-├── 404.html
 ├── CNAME
 │
 ├── images/
-│   ├── ...
-│   ├── geclau/
-│   └── tracam/
-│       ├── dashboard.webp
-│       └── menu.webp
+│   ├── 404.png
+│   └── ...
 │
-├── nosotros/
-│   └── index.html
-│
-└── productos/
+└── proyectos/
     ├── geclau/
-    │   └── index.html
+    │   ├── index.html
+    │   └── images/
     └── tracam/
-        └── index.html
+        ├── index.html
+        └── images/
 ```
 
 No crear carpetas o archivos por anticipación. Solo deben existir cuando haya una responsabilidad real que los justifique.
 
 La estructura exacta debe validarse contra el repositorio real antes de cualquier modificación.
+
+### Decisión sobre `/nosotros/`
+
+- No existe una página `/nosotros/`.
+- No debe crearse salvo nueva decisión explícita del propietario.
+- La información institucional, historia y equipo se encuentra actualmente en la Home, sección `#equipo`.
 
 ## Lectura obligatoria
 
@@ -77,7 +79,7 @@ Para cualquier tarea:
 2. Leer este archivo una vez.
 3. Consultar `.agents/` para determinar si existen skills o reglas aplicables a la tarea.
 4. Inspeccionar los archivos reales relacionados con la tarea.
-5. Revisar `PLAN_IMPLEMENTACION_WEB_GRUPO6S.md` cuando la tarea involucre arquitectura, contenido, identidad o etapas de implementación — pero ese archivo está ignorado por Git; si no existe, continuar sin él.
+5. Revisar `PLAN_IMPLEMENTACION_WEB_GRUPO6S.md` cuando la tarea involucre arquitectura, contenido, identidad o etapas de implementación (guía histórica/de planificación; no reemplaza decisiones posteriores aprobadas) — pero ese archivo está ignorado por Git; si no existe, continuar sin él.
 
 No es necesario recorrer todo el repositorio para una tarea puntual ni volver a abrir documentos ya leídos salvo que hayan cambiado durante la tarea.
 
@@ -97,7 +99,7 @@ Prioridad:
 2. reglas de este archivo;
 3. reglas y skills aplicables de `.agents/`;
 4. pedido explícito y vigente del propietario, interpretado dentro de los límites anteriores;
-5. `PLAN_IMPLEMENTACION_WEB_GRUPO6S.md` cuando esté disponible;
+5. `PLAN_IMPLEMENTACION_WEB_GRUPO6S.md` cuando esté disponible (actúa como guía histórica/de planificación; no reemplaza decisiones posteriores aprobadas; si contradice `AGENTS.md` o una decisión explícita vigente del propietario, se sigue la decisión vigente);
 6. patrones reales del código;
 7. criterio del agente.
 
@@ -170,7 +172,7 @@ Requisitos mínimos en cualquier cambio:
 
 ## Rutas de recursos
 
-Las páginas anidadas (`/nosotros/`, `/productos/geclau/`, `/productos/tracam/`) deben referenciar recursos compartidos mediante rutas desde la raíz:
+Las páginas anidadas (`/proyectos/geclau/`, `/proyectos/tracam/`) deben referenciar recursos compartidos mediante rutas desde la raíz:
 
 ```text
 /style.css
@@ -281,6 +283,15 @@ Cinco integrantes. El nombre "Grupo 6" nació porque el equipo coincidió repeti
 
 ### Productos
 
+Las rutas aprobadas son:
+
+- `/proyectos/geclau/`
+- `/proyectos/tracam/`
+
+No renombrarlas a `/productos/`.
+
+Las páginas existentes de GeClau y TRACAM están aprobadas en contenido y diseño. No deben rediseñarse, reestructurarse o modificarse salvo pedido explícito del propietario.
+
 #### GeClau
 
 Software de gestión académica orientado a universidades. Implementado en la **Universidad Tecnológica Nacional — Facultad Regional Mar del Plata** (`https://aulas.mdp.utn.edu.ar/`).
@@ -301,9 +312,8 @@ No afirmar uso operativo actual si no está confirmado. No colocar el dominio `t
 
 ```text
 https://grupo6s.com/
-https://grupo6s.com/productos/geclau/
-https://grupo6s.com/productos/tracam/
-https://grupo6s.com/nosotros/
+https://grupo6s.com/proyectos/geclau/
+https://grupo6s.com/proyectos/tracam/
 ```
 
 ## Cierre obligatorio de tarea
