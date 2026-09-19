@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (theme === "dark") {
       body.classList.add("dark-mode");
       if (logo) {
-        logo.src = logo.dataset.darkSrc || "/images/logoExagonD.png";
+        logo.src = logo.dataset.darkSrc || "/images/logoExagonoD.png";
       }
     } else {
       body.classList.remove("dark-mode");
@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Fade-up animations
-  const elementsToAnimate = document.querySelectorAll('section h2, .proyecto-info, .proyecto-imagen, .plan-card, .miembro');
+  const elementsToAnimate = document.querySelectorAll('section h2, .proyecto-info, .plan-card, .miembro');
   elementsToAnimate.forEach(el => {
     el.classList.add('fade-up');
   });
