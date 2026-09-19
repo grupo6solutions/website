@@ -1,6 +1,6 @@
 # Generated analysis artifacts
 audit_report.xml
-repomix-output.xml
+repomix*
 reports/
 
 # OS files
@@ -11,3 +11,4 @@ Thumbs.db
 *.swp
 *.swo
 *~
+PLAN_IMPLEMENTACION*

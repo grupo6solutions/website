@@ -1,0 +1,23 @@
+# Grupo6S
+
+> Grupo6S (Grupo 6 Solutions) es un equipo de desarrollo de software que crea productos propios y soluciones de software a medida para personas, empresas y organizaciones.
+
+Grupo6S desarrolla actualmente GeClau y TRACAM. También ofrece desarrollo de software a medida y modalidades de implementación SaaS y On-Premise.
+
+## Sitio
+
+- [Grupo6S](https://grupo6s.com/): Sitio institucional, servicios, productos, equipo y contacto.
+
+## Productos
+
+- [GeClau](https://grupo6s.com/proyectos/geclau/): Software de gestión académica orientado a la gestión de clases, aulas, horarios y operación académica.
+- [TRACAM](https://grupo6s.com/proyectos/tracam/): Aplicación web para la gestión y trazabilidad de operaciones de transporte de cargas.
+
+## Información institucional
+
+- [Equipo](https://grupo6s.com/#equipo): Historia de Grupo6S, actividad e integrantes del equipo.
+- [Contacto](https://grupo6s.com/#contacto): Formulario de contacto de Grupo6S.
+
+## Contacto
+
+- Email: grupo6solutions@gmail.com
