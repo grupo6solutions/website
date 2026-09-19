@@ -131,6 +131,7 @@
                 class="nav-dropdown-trigger"
                 aria-expanded="false"
                 aria-haspopup="true"
+                aria-controls="nav-projects-menu"
                 aria-label="Proyectos"
               >
                 Proyectos
@@ -150,7 +151,7 @@
                   />
                 </svg>
               </button>
-              <ul class="nav-dropdown-menu">
+              <ul class="nav-dropdown-menu" id="nav-projects-menu">
                 <li><a href="/proyectos/geclau/">GeClau</a></li>
                 <li><a href="/proyectos/tracam/">TRACAM</a></li>
               </ul>
@@ -471,7 +472,7 @@
                 </p>
                 <div class="social-links">
                   <a
-                    href="https://www.linkedin.com/in/ariel-ayala-49006823a/"
+                    href="https://www.linkedin.com/in/ayalaarielw/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn de Ariel Ayala"
@@ -516,7 +517,7 @@
                 </p>
                 <div class="social-links">
                   <a
-                    href="https://www.linkedin.com/in/nahuel-roman-168320287/"
+                    href="https://www.linkedin.com/in/nahuelroman/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn de Nahuel Roman"
@@ -680,7 +681,11 @@
               data-sitekey="0x4AAAAAACHPNfz5F3RwUT0F"
               style="margin-bottom: 1rem"
             ></div>
-            <p id="form-status"></p>
+            <p
+              id="form-status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></p>
             <div class="form-group">
               <button type="submit" class="cta-button-form">
                 Enviar Mensaje

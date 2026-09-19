@@ -2042,6 +2042,13 @@ body.dark-mode {
     animation: none !important;
   }
 
+  .fade-up,
+  .fade-up.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
   .proyecto-imagen-interactive {
     transition: none !important;
   }
