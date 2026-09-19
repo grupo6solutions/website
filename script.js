@@ -32,6 +32,18 @@ document.addEventListener("DOMContentLoaded", () => {
       navDropdownTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
+    navDropdown.addEventListener("mouseenter", () => {
+      if (window.innerWidth >= 768) {
+        navDropdownTrigger.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    navDropdown.addEventListener("mouseleave", () => {
+      if (window.innerWidth >= 768 && !navDropdown.classList.contains("is-open")) {
+        navDropdownTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
     document.addEventListener("click", (e) => {
       if (!navDropdown.contains(e.target)) {
         navDropdown.classList.remove("is-open");
