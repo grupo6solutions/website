@@ -1,16 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
+  const navDropdown = document.querySelector(".nav-dropdown");
+  const navDropdownTrigger = document.querySelector(".nav-dropdown-trigger");
+
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+      const active = navLinks.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", active ? "true" : "false");
     });
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         if (navLinks.classList.contains("active")) {
           navLinks.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+        if (navDropdown) {
+          navDropdown.classList.remove("is-open");
+          if (navDropdownTrigger) {
+            navDropdownTrigger.setAttribute("aria-expanded", "false");
+          }
         }
       });
+    });
+  }
+
+  if (navDropdown && navDropdownTrigger) {
+    navDropdownTrigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = navDropdown.classList.toggle("is-open");
+      navDropdownTrigger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!navDropdown.contains(e.target)) {
+        navDropdown.classList.remove("is-open");
+        navDropdownTrigger.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navDropdown.classList.contains("is-open")) {
+        navDropdown.classList.remove("is-open");
+        navDropdownTrigger.setAttribute("aria-expanded", "false");
+        navDropdownTrigger.focus();
+      }
     });
   }
 
@@ -21,10 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const logo = document.querySelector(".logo-img");
     if (theme === "dark") {
       body.classList.add("dark-mode");
-      if (logo) logo.src = "images/logoExagonoD.png";
+      if (logo) {
+        logo.src = logo.dataset.darkSrc || "/images/logoExagonD.png";
+      }
     } else {
       body.classList.remove("dark-mode");
-      if (logo) logo.src = "images/logoExagonoL.png";
+      if (logo) {
+        logo.src = logo.dataset.lightSrc || "/images/logoExagonoL.png";
+      }
     }
   };
 
@@ -154,4 +192,3 @@ document.addEventListener("DOMContentLoaded", () => {
     yearElement.textContent = new Date().getFullYear();
   }
 });
-

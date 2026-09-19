@@ -20,6 +20,14 @@ La implementacion actual esta compuesta por:
 website/
 |- .agents/
 |- images/
+|- proyectos/
+|  |- geclau/
+|  |  |- images/
+|  |  |  |- geclau.jpg
+|  |  |- index.html
+|  |- tracam/
+|     |- images/
+|     |- index.html
 |- CNAME
 |- favicon.png
 |- index.html

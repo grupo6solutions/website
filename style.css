@@ -40,9 +40,16 @@ body {
   background-color: var(--color-fondo);
   color: var(--color-texto);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+}
+
+main {
+  flex: 1;
 }
 
 img {
@@ -171,6 +178,81 @@ header {
 .nav-links a:hover {
   color: var(--color-primario);
 }
+
+/* --- Dropdown Proyectos --- */
+.nav-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.nav-dropdown-trigger {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  padding: 10px 15px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  transition: color 0.3s ease;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger:focus-visible {
+  color: var(--color-primario);
+}
+
+.dropdown-icon {
+  width: 10px;
+  height: 6px;
+  transition: transform 0.3s ease;
+}
+
+.nav-dropdown.is-open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  padding: 8px 0;
+}
+
+.nav-dropdown.is-open .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown-menu li {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.nav-dropdown-menu a {
+  font-size: 1.1rem;
+  padding: 8px 15px;
+}
+
+.nav-cta-mobile {
+  width: 100%;
+}
+
+.nav-cta-mobile .nav-cta-button {
+  display: inline-flex;
+}
+
 
 .nav-controls {
   display: flex;
@@ -1009,6 +1091,20 @@ body.dark-mode {
   color: var(--color-primario);
 }
 
+.dark-mode .nav-dropdown-trigger {
+  color: var(--dm-secundario);
+}
+
+.dark-mode .nav-dropdown-trigger:hover,
+.dark-mode .nav-dropdown-trigger:focus-visible {
+  color: var(--dm-primario);
+}
+
+.dark-mode .nav-dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+
 .dark-mode .nav-cta-button {
   background-color: transparent;
   color: var(--dm-primario);
@@ -1246,6 +1342,98 @@ body.dark-mode {
   .nav-cta-button {
     display: inline-flex;
   }
+
+  .nav-cta-mobile {
+    display: none;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    width: auto;
+  }
+
+  .nav-dropdown-trigger {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+  }
+
+  .nav-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background-color: var(--color-fondo);
+    box-shadow: 0 10px 25px var(--color-sombra);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 150px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu,
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown:hover .dropdown-icon,
+  .nav-dropdown:focus-within .dropdown-icon,
+  .nav-dropdown.is-open .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown-menu li {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-texto);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .nav-dropdown-menu a:hover,
+  .nav-dropdown-menu a:focus-visible {
+    background-color: var(--color-fondo-secundario);
+    color: var(--color-primario);
+  }
+
+  .dark-mode .nav-dropdown-menu {
+    background-color: var(--dm-fondo-secundario);
+    border-color: var(--dm-borde);
+    box-shadow: 0 10px 25px var(--dm-sombra);
+  }
+
+  .dark-mode .nav-dropdown-menu a {
+    color: var(--dm-secundario);
+  }
+
+  .dark-mode .nav-dropdown-menu a:hover,
+  .dark-mode .nav-dropdown-menu a:focus-visible {
+    background-color: var(--dm-fondo);
+    color: var(--dm-primario);
+  }
+
 
   .hero {
     padding: 100px 0;

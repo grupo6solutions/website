@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      GeClau: software de gestión académica para universidades | Grupo 6 Solutions
+    </title>
+    <meta
+      name="description"
+      content="GeClau es el software de gestión académica de Grupo 6 Solutions para universidades. Centraliza aulas, horarios, clases, comisiones, materias y profesores."
+    />
+    <link rel="canonical" href="https://grupo6s.com/proyectos/geclau/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta
+      property="og:title"
+      content="GeClau: software de gestión académica para universidades | Grupo 6 Solutions"
+    />
+    <meta
+      property="og:description"
+      content="GeClau es el software de gestión académica de Grupo 6 Solutions para universidades. Centraliza aulas, horarios, clases, comisiones, materias y profesores."
+    />
+    <meta property="og:url" content="https://grupo6s.com/proyectos/geclau/" />
+    <meta
+      property="og:image"
+      content="https://grupo6s.com/images/social-preview.jpg"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://grupo6s.com/images/social-preview.jpg"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Grupo 6 Solutions - GeClau Software Académico"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="GeClau: software de gestión académica para universidades | Grupo 6 Solutions"
+    />
+    <meta
+      name="twitter:description"
+      content="GeClau es el software de gestión académica de Grupo 6 Solutions para universidades. Centraliza aulas, horarios, clases, comisiones, materias y profesores."
+    />
+    <meta
+      name="twitter:image"
+      content="https://grupo6s.com/images/social-preview.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Grupo 6 Solutions - GeClau Software Académico"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué es GeClau?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GeClau es un software de gestión académica desarrollado por Grupo 6 Solutions para universidades, orientado a centralizar aulas, horarios y operación académica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué procesos permite gestionar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Permite gestionar aulas, horarios, clases, comisiones, materias, profesores, eventos, usuarios y roles, además de agenda pública, horarios públicos y asignación de aulas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Está pensado para universidades?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. GeClau está orientado principalmente a universidades y a la gestión de horarios, aulas y clases en ese contexto."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿GeClau puede adaptarse a instituciones no universitarias?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GeClau está orientado principalmente a universidades. Su lógica de gestión de aulas, horarios y clases puede adaptarse a otras instituciones educativas, como colegios secundarios o primarios, según las necesidades y el alcance de implementación."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Grupo 6 Solutions ofrece una demo de GeClau?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. El sitio enlaza una demo pública de GeClau y también ofrece contacto para solicitar acceso."
+            }
+          }
+        ]
+      }
+    </script>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="image" href="/images/logoExagonD.png" />
+    <link rel="preload" as="image" href="images/geclau.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav-bar">
+        <a href="/" class="logo-link">
+          <img
+            src="/images/logoExagonD.png"
+            data-light-src="/images/logoExagonoL.png"
+            data-dark-src="/images/logoExagonD.png"
+            alt="Logo de Grupo 6 Solutions"
+            class="logo-img"
+            width="60"
+            height="60"
+          />
+          <div class="logo-text">
+            <span class="grupo-6">Grupo 6</span>
+            <span class="solutions">Solutions</span>
+          </div>
+        </a>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#licencias">Planes</a></li>
+            <li><a href="/#equipo">Equipo</a></li>
+            <li class="nav-dropdown">
+              <button
+                type="button"
+                class="nav-dropdown-trigger"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-label="Proyectos"
+              >
+                Proyectos
+                <svg
+                  class="dropdown-icon"
+                  aria-hidden="true"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul class="nav-dropdown-menu">
+                <li><a href="/proyectos/geclau/">GeClau</a></li>
+                <li><a href="/proyectos/tracam/">TRACAM</a></li>
+              </ul>
+            </li>
+            <li class="nav-cta-mobile">
+              <a href="/#contacto" class="nav-cta-button">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="nav-controls">
+          <a href="/#contacto" class="nav-cta-button">Contacto</a>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Cambiar modo claro/oscuro"
+          >
+            <svg
+              class="icon-sun"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 011.06-1.06l1.591 1.591a.75.75 0 11-1.06 1.06l-1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.83 17.83a.75.75 0 011.06 1.06l-1.59 1.59a.75.75 0 01-1.06-1.06l1.59-1.59zM12 21.75a.75.75 0 01-.75-.75v-2.25a.75.75 0 011.5 0V21a.75.75 0 01-.75.75zM4.172 17.83a.75.75 0 01-1.06 1.06l-1.59-1.59a.75.75 0 111.06-1.06l1.59 1.59zM2.25 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H3a.75.75 0 01-.75-.75zM6.106 6.106a.75.75 0 01-1.06-1.06l1.591-1.591a.75.75 0 111.06 1.06l-1.591 1.59z"
+              />
+            </svg>
+            <svg
+              class="icon-moon"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.463-.69a.75.75 0 01.981.98 10.503 10.503 0 01-4.622 4.622 10.5 10.5 0 01-15.18-15.18A10.503 10.503 0 019.528 1.718z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </button>
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            aria-label="Menú"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="proyecto">
+        <div class="container project-container">
+          <h2>Nuestro Proyecto: GeClau</h2>
+          <div class="proyecto-grid asymmetrical-grid">
+            <div class="proyecto-info">
+              <p>
+                GeClau (Gestión de Clases y Aulas) es el software académico de
+                Grupo 6 Solutions para universidades que necesitan ordenar su
+                gestión de aulas, horarios y clases desde una sola plataforma.
+              </p>
+              <p>
+                La solución centraliza la información académica vinculada a
+                horarios, materias, comisiones, profesores, eventos y asignación
+                de aulas, reduciendo la dependencia de planillas y mejorando la
+                visibilidad operativa.
+              </p>
+              <p>
+                GeClau también permite publicar agenda y horarios, administrar
+                usuarios y roles, y ofrecer vistas de horarios para pantallas o
+                entornos tipo TV. El proyecto surgió a partir de una necesidad
+                real detectada en la
+                <strong>UTN Facultad Regional Mar del Plata</strong>.
+              </p>
+
+              <div class="proyecto-cta-container">
+                <a
+                  href="https://aulas.mdp.utn.edu.ar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-button-secondary"
+                >
+                  Ir al Sitio
+                </a>
+                <a
+                  href="https://demo.geclau.grupo6s.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-button-secondary"
+                >
+                  Acceder a demo
+                </a>
+                <a
+                  href="/#contacto"
+                  id="btn-solicitar-acceso"
+                  class="cta-button-secondary"
+                >
+                  Solicitar acceso
+                </a>
+              </div>
+            </div>
+            <div class="proyecto-imagen">
+              <img
+                src="images/geclau.jpg"
+                alt="Interfaz de la aplicación GeClau"
+                width="800"
+                height="500"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section" aria-labelledby="seo-funcionalidades-title">
+        <div class="container">
+          <div class="seo-section-header">
+            <p class="seo-section-kicker">Funciones reales de GeClau</p>
+            <h2 id="seo-funcionalidades-title">
+              Software para gestionar horarios, aulas y operación académica
+            </h2>
+            <p class="seo-section-lead">
+              GeClau está orientado a universidades que necesitan centralizar la
+              gestión académica y ordenar procesos que suelen dispersarse entre
+              planillas, sistemas aislados y comunicación manual.
+            </p>
+          </div>
+
+          <div class="seo-feature-grid">
+            <article class="seo-feature-card">
+              <h3 class="seo-feature-card-title">Planificación académica</h3>
+              <p class="seo-feature-card-text">
+                Reúne la gestión de horarios, clases, comisiones y materias en
+                un mismo entorno para facilitar la organización académica.
+              </p>
+            </article>
+            <article class="seo-feature-card">
+              <h3 class="seo-feature-card-title">Gestión de aulas</h3>
+              <p class="seo-feature-card-text">
+                Permite asignar aulas, ordenar disponibilidad y reducir
+                conflictos de superposición en la programación.
+              </p>
+            </article>
+            <article class="seo-feature-card">
+              <h3 class="seo-feature-card-title">Usuarios y roles</h3>
+              <p class="seo-feature-card-text">
+                Organiza perfiles, accesos y responsabilidades para operar el
+                sistema con mayor control administrativo.
+              </p>
+            </article>
+            <article class="seo-feature-card">
+              <h3 class="seo-feature-card-title">Difusión de horarios</h3>
+              <p class="seo-feature-card-text">
+                Incluye agenda pública, horarios públicos y vistas tipo TV o
+                pantallas para comunicar información académica.
+              </p>
+            </article>
+          </div>
+
+          <div class="seo-use-case-list" aria-label="Casos de uso de GeClau">
+            <div class="seo-use-case-item">
+              Gestión de eventos académicos vinculados a la programación.
+            </div>
+            <div class="seo-use-case-item">
+              Consulta centralizada de horarios y asignación de aulas.
+            </div>
+            <div class="seo-use-case-item">
+              Publicación de información operativa para alumnos y personal.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="seo-section" aria-labelledby="seo-faq-title">
+        <div class="container">
+          <div class="seo-section-header">
+            <p class="seo-section-kicker">Preguntas frecuentes</p>
+            <h2 id="seo-faq-title">FAQ sobre GeClau</h2>
+            <p class="seo-section-lead">
+              Respuestas breves sobre el alcance funcional de GeClau y su foco
+              como software académico para universidades.
+            </p>
+          </div>
+
+          <div class="seo-faq-list">
+            <article class="seo-faq-item">
+              <h3 class="seo-faq-question">¿Qué es GeClau?</h3>
+              <p class="seo-faq-answer">
+                GeClau es un software de gestión académica desarrollado por
+                Grupo 6 Solutions para universidades, orientado a centralizar
+                aulas, horarios y operación académica.
+              </p>
+            </article>
+            <article class="seo-faq-item">
+              <h3 class="seo-faq-question">¿Qué procesos permite gestionar?</h3>
+              <p class="seo-faq-answer">
+                Permite gestionar aulas, horarios, clases, comisiones, materias,
+                profesores, eventos, usuarios y roles, además de agenda pública,
+                horarios públicos y asignación de aulas.
+              </p>
+            </article>
+            <article class="seo-faq-item">
+              <h3 class="seo-faq-question">¿Está pensado para universidades?</h3>
+              <p class="seo-faq-answer">
+                Sí. GeClau está orientado principalmente a universidades y a la
+                gestión de horarios, aulas y clases en ese contexto.
+              </p>
+            </article>
+            <article class="seo-faq-item">
+              <h3 class="seo-faq-question">
+                ¿GeClau puede adaptarse a instituciones no universitarias?
+              </h3>
+              <p class="seo-faq-answer">
+                GeClau está orientado principalmente a universidades. Su lógica
+                de gestión de aulas, horarios y clases puede adaptarse a otras
+                instituciones educativas, como colegios secundarios o
+                primarios, según las necesidades y el alcance de
+                implementación.
+              </p>
+            </article>
+            <article class="seo-faq-item">
+              <h3 class="seo-faq-question">
+                ¿Grupo 6 Solutions ofrece una demo de GeClau?
+              </h3>
+              <p class="seo-faq-answer">
+                Sí. El sitio enlaza una demo pública de GeClau y también ofrece
+                contacto para solicitar acceso.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="tecnologias">
+        <div class="container">
+          <h2>Stack Tecnológico</h2>
+          <div class="tech-marquee-wrapper">
+            <div class="tech-marquee">
+              <!-- Fila 1 -->
+              <div class="tech-stack-row">
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/react/61DAFB"
+                    alt="React"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>React 19</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/typescript/3178C6"
+                    alt="TypeScript"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>TypeScript</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/nodedotjs/339933"
+                    alt="Node.js"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/express/000000"
+                    alt="Express.js"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Express.js</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/zod/3E67B1"
+                    alt="Zod"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Zod</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/typeorm/E8372D"
+                    alt="TypeORM"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>TypeORM</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/mysql/4479A1"
+                    alt="MySQL"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>MySQL</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/vite/646CFF"
+                    alt="Vite"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Vite</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/docker/2496ED"
+                    alt="Docker"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Docker</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/cloudflare/F38020"
+                    alt="Cloudflare"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Cloudflare</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/jsonwebtokens/000000"
+                    alt="JWT"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>JWT</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/chakraui/319795"
+                    alt="Chakra UI"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Chakra UI</span>
+                </div>
+              </div>
+              <!-- Fila Duplicada para Infinite Scroll -->
+              <div class="tech-stack-row" aria-hidden="true">
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/react/61DAFB"
+                    alt="React"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>React 19</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/typescript/3178C6"
+                    alt="TypeScript"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>TypeScript</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/nodedotjs/339933"
+                    alt="Node.js"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/express/000000"
+                    alt="Express.js"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Express.js</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/zod/3E67B1"
+                    alt="Zod"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Zod</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/typeorm/E8372D"
+                    alt="TypeORM"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>TypeORM</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/mysql/4479A1"
+                    alt="MySQL"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>MySQL</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/vite/646CFF"
+                    alt="Vite"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Vite</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/docker/2496ED"
+                    alt="Docker"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Docker</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/cloudflare/F38020"
+                    alt="Cloudflare"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Cloudflare</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/jsonwebtokens/000000"
+                    alt="JWT"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>JWT</span>
+                </div>
+                <div class="tech-item">
+                  <img
+                    src="https://cdn.simpleicons.org/chakraui/319795"
+                    alt="Chakra UI"
+                    width="24"
+                    height="24"
+                    loading="lazy"
+                  /><span>Chakra UI</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <p>&copy; <span id="current-year"></span> Grupo 6 Solutions</p>
+        </div>
+        <div class="social-links-footer">
+          <a
+            href="https://www.linkedin.com/company/grupo-6-s/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Grupo 6 Solutions"
+            class="social-link-linkedin"
+          >
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/grupo6s/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Grupo 6 Solutions"
+            class="social-link-instagram"
+          >
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
